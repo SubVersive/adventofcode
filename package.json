@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "mocha --recursive spec* --require spec.init.js --reporter list --watch"
+    "test": "mocha **/spec.js --recursive  --require spec.init.js --reporter list --watch"
   },
   "repository": {
     "type": "git",
