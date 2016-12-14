@@ -8,11 +8,11 @@ module.exports = {
 function exec1(input) {
   const parts = input.split(os.EOL);
   return parts.reduce((prev, curr) => {
-    return prev + single(curr);
+    return prev + singlePaper(curr);
   }, 0);
 }
 
-function single(str) {
+function singlePaper(str) {
   const [ l, w, h ] = str.split('x');
   const p1 = l*w;
   const p2 = w*h;
@@ -25,4 +25,23 @@ function single(str) {
 }
 
 function exec2(input) {
+  const parts = input.split(os.EOL);
+  return parts.reduce((prev, curr) => {
+    return prev + singleRibbon(curr);
+  }, 0);
 }
+
+function singleRibbon(str) {
+  const [ l, w, h ] = str.split('x').map((v) => parseInt(v));
+  let min1, min2;
+  if (l < w) {
+    min1 = l;
+    min2 = h < w ? h : w;
+  } else {
+    min1 = w;
+    min2 = l < h ? l : h;
+  }
+
+  return l * w * h + 2 * min1 + 2 * min2;
+}
+

@@ -15,6 +15,19 @@ describe('Day 2 challange', () => {
   });
 
   describe('Part 2', () => {
-    
+    it('for box 2x3x4 cubic should be 34', () => {
+      const input = `2x3x4`;
+      func.exec2(input).should.equal(34);
+    });
+
+    it('for box 1x1x10 cubic should be 14', () => {
+      const input = `1x1x10`;
+      func.exec2(input).should.equal(14);
+    });
+
+    it('for box both cubic should be 48', () => {
+      const input = `1x1x10${os.EOL}2x3x4`;
+      func.exec2(input).should.equal(48);
+    });
   });
 });
