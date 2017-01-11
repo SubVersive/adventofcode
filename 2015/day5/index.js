@@ -16,10 +16,7 @@ function exec1(input) {
 
 function exec2(input) {
   const strings = input.split(os.EOL);
-
-  // console.log(strings.filter((e) => isEvenNicer(e).hasSplittedDoubles));
-
-  return strings.filter((e) => !isEvenNicer(e).result).length;
+  return strings.filter((e) => isEvenNicer(e).result).length;
 }
 
 function isEvenNicer(str) {
@@ -29,9 +26,12 @@ function isEvenNicer(str) {
   
   for (let i = 1; i < str.length; i++) {
     const key = str[i-1] + str[i];
-    if (pairs[key] && i > pairs[key].index + 1) {
-      pairs[key].count++;
-      hasMatchedPair = true;
+    if (pairs[key]) {
+      if (i > pairs[key].index + 1) {
+        pairs[key].count++;
+        pairs[key].index = i;
+        hasMatchedPair = true;
+      }
     } else {
       pairs[key] = {
         index: i,
@@ -47,13 +47,6 @@ function isEvenNicer(str) {
   }
 
   const result = hasMatchedPair && hasSplittedDoubles;
-  // if (!result) {
-  //   for(let p in pairs) {
-  //     if (pairs[p].count > 1) {
-  //       // console.log(str, pairs);
-  //     }
-  //   }
-  // }
 
   return {
     result,

@@ -43,7 +43,9 @@ describe('Day 5 challange', () => {
     });
 
     it('should not calculate overlapped pairs', () => {
-      func.isEvenNicer('aaa').pairs['aa'].count.should.be.equal(1);
+      // func.isEvenNicer('aaa').pairs['aa'].count.should.be.equal(1);
+      // func.isEvenNicer('aaaa').pairs['aa'].count.should.be.equal(2);
+      func.isEvenNicer('aaabaaa').pairs['aa'].count.should.be.equal(2);
     });
 
     it('should run all sample tests', () => {
