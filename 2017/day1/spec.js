@@ -19,7 +19,7 @@ describe('2017 Day 1 challange', () => {
     });
   });
 
-  describe.only('Part 2', function () {
+  describe('Part 2', function () {
     it('should return 0 by default', () => {
       func.exec2('').should.equal(0);
     });
