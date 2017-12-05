@@ -1,7 +1,7 @@
 const os = require('os');
 const func = require('./');
 
-describe('2017 Day 1 challange', () => {
+describe('2017 Day 2 challange', () => {
   describe('Part 1', () => {
     it('should return 2 for single row', () => {
       func.exec1('1\t3').should.equal(2);
