@@ -23,7 +23,7 @@ describe('2017 Day 4 challange', () => {
     });
   });
 
-  describe.only('Part 2', function () {
+  describe('Part 2', function () {
     it('should return 1 for 1 valid phrase with onem word', () => {
       func.exec2('aa').should.equal(1);
     });
