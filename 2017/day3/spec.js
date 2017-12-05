@@ -42,7 +42,7 @@ describe('2017 Day 3 challange', () => {
     });
   });
 
-  describe.only('Part 2', function () {
+  describe('Part 2', function () {
     it('should return 0 for 1', () => {
       func.exec2('1').should.equal(0);
     });
