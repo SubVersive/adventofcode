@@ -2,9 +2,8 @@ const os = require("os");
 const func = require('./');
 const hashService = require('./hash.service');
 const sinon = require('sinon');
-require('should-sinon');
 
-describe('Day 4 challange', () => {
+describe.skip('Day 4 challange', () => {
   let sandbox;
   const input = '123';
   beforeEach(() => { sandbox = sinon.sandbox.create(); });
