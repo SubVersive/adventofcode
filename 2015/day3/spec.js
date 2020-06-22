@@ -1,6 +1,6 @@
 const func = require('.');
 
-describe('Day 3 challange', () => {
+describe('2015: Day 3 challange', () => {
   describe('Part 1', () => {
     it('for default - 0 [0] length 2', () => {
       const houses = func.visitedHouses('');

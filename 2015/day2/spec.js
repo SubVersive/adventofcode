@@ -1,7 +1,7 @@
 const os = require('os');
 const func = require('.');
 
-describe('Day 2 challange', () => {
+describe('2015: Day 2 challange', () => {
   describe('Part 1', () => {
     it('for box 1x1x1) should return 43', () => {
       const input = `1x1x10`;

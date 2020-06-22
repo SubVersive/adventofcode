@@ -1,6 +1,6 @@
 const func = require('.');
 
-describe('Day 5 challange', () => {
+describe('2015: Day 5 challange', () => {
   describe('Part 1', () => {
     it('should return true if string contains at least 3 vowels', () => {
       expect(func.isNice('asasas')).toBeFalsy();

@@ -1,6 +1,6 @@
 const func = require('.');
 
-describe('Day 1 challange', () => {
+describe('2015: Day 1 challange', () => {
   describe('Part 1', () => {
     it('should return 0 by default', () => {
       expect(func.exec1('')).toEqual(0);

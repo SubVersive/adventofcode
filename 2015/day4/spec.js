@@ -1,7 +1,7 @@
 const func = require('.');
 const hashService = require('./hash.service');
 
-describe('Day 4 challange', () => {
+describe('2015: Day 4 challange', () => {
   const input = '123';
 
   describe('Part 1', () => {
