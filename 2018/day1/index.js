@@ -1,10 +1,5 @@
 const os = require('os');
 
-module.exports = {
-  exec1,
-  exec2
-}; 
-
 function exec1(input) {
   let result = 0;
   if (!input) {
@@ -12,16 +7,19 @@ function exec1(input) {
   }
 
   const lines = input.split(os.EOL);
-  lines.forEach(line => {
+  lines.forEach((line) => {
     if (line.startsWith('+')) {
-      result += parseInt(line.substring(1));
+      result += parseInt(line.substring(1), 10);
     } else {
-      result -= parseInt(line.substring(1));
+      result -= parseInt(line.substring(1), 10);
     }
   });
   return result;
 }
 
-function exec2(input) {
-  
-}
+function exec2() {}
+
+module.exports = {
+  exec1,
+  exec2,
+};

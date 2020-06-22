@@ -1,15 +1,10 @@
-module.exports = {
-  exec1,
-  exec2
-}; 
-
 function exec1(input) {
   let result = 0;
-  for(let i = 0; i < input.length; i++) {
-    if(input[i] === '(') {
+  for (let i = 0; i < input.length; i++) {
+    if (input[i] === '(') {
       result++;
     }
-    if(input[i] === ')') {
+    if (input[i] === ')') {
       result--;
     }
   }
@@ -18,11 +13,11 @@ function exec1(input) {
 
 function exec2(input) {
   let result = 0;
-  for(let i = 0; i < input.length; i++) {
-    if(input[i] === '(') {
+  for (let i = 0; i < input.length; i++) {
+    if (input[i] === '(') {
       result++;
     }
-    if(input[i] === ')') {
+    if (input[i] === ')') {
       result--;
     }
 
@@ -32,3 +27,8 @@ function exec2(input) {
   }
   return 1;
 }
+
+module.exports = {
+  exec1,
+  exec2,
+};

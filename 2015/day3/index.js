@@ -1,12 +1,4 @@
-const os = require('os');
-
-module.exports = {
-  exec1,
-  exec2,
-
-  visitedHouses,
-  visitedHousesRobo
-};
+/* eslint-disable no-param-reassign */
 
 function visitedHouses(input) {
   let x = 0;
@@ -42,25 +34,6 @@ function visitedHouses(input) {
   return houses;
 }
 
-function visitedHousesRobo(input) {
-  let santa = {
-    x: 0,
-    y: 0
-  };
-  let robo = {
-    x: 0,
-    y: 0
-  };
-  const houses = {};
-  houses[0] = [0];
-  for (let i = 0; i < input.length; i++) {
-    const pos = i % 2 === 0 ? santa : robo;
-    handleStep(input[i], pos, houses);
-  }
-
-  return houses;
-}
-
 function handleStep(step, pos, houses) {
   if (step === '^') {
     pos.x++;
@@ -87,14 +60,30 @@ function handleStep(step, pos, houses) {
   }
 }
 
+function visitedHousesRobo(input) {
+  const santa = {
+    x: 0,
+    y: 0,
+  };
+  const robo = {
+    x: 0,
+    y: 0,
+  };
+  const houses = {};
+  houses[0] = [0];
+  for (let i = 0; i < input.length; i++) {
+    const pos = i % 2 === 0 ? santa : robo;
+    handleStep(input[i], pos, houses);
+  }
+
+  return houses;
+}
+
 function exec1(input) {
   let total = 0;
   const houses = visitedHouses(input);
-  for (let p in houses) {
-    if (!houses.hasOwnProperty(p)) {
-      continue;
-    }
-
+  // eslint-disable-next-line no-restricted-syntax
+  for (const p of Object.keys(houses)) {
     total += houses[p].length;
   }
   return total;
@@ -103,12 +92,17 @@ function exec1(input) {
 function exec2(input) {
   let total = 0;
   const houses = visitedHousesRobo(input);
-  for (let p in houses) {
-    if (!houses.hasOwnProperty(p)) {
-      continue;
-    }
-
+  // eslint-disable-next-line no-restricted-syntax
+  for (const p of Object.keys(houses)) {
     total += houses[p].length;
   }
   return total;
 }
+
+module.exports = {
+  exec1,
+  exec2,
+
+  visitedHouses,
+  visitedHousesRobo,
+};

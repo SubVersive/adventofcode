@@ -1,20 +1,15 @@
-module.exports = {
-  exec1,
-  exec2
-};
-
 const getPosition = (val) => {
   let ring = 0;
   let base = 1;
-  while(val > base * base) {
+  while (val > base * base) {
     ring++;
     base += 2;
   }
   return { ring, base, max: base * base };
-}
+};
 
 function exec1(input) {
-  const number = parseInt(input);
+  const number = parseInt(input, 10);
   if (number === 1) {
     return 0;
   }
@@ -28,16 +23,21 @@ function exec1(input) {
   while (temp !== number) {
     if (decreasing) {
       current--;
-      decreasing = current === minDistance ? false : true;
+      decreasing = current !== minDistance;
     } else {
       current++;
-      decreasing = current === maxDistance ? true : false;
+      decreasing = current === maxDistance;
     }
     temp--;
   }
   return current;
 }
 
-function exec2(input) {
+function exec2() {
   return 0;
 }
+
+module.exports = {
+  exec1,
+  exec2,
+};
