@@ -3,6 +3,7 @@ const fs = require('fs');
 const path = require('path');
 
 const makeGrid = require('./grid');
+const makeGridV2 = require('./gridV2');
 
 const getRange = (line) => {
   const numbers = line.match(/[\d,\d]+/g);
@@ -18,8 +19,8 @@ const getRange = (line) => {
   };
 };
 
-function exec1() {
-  const grid = makeGrid(1000, 1000);
+const run = (maker) => {
+  const grid = maker(1000, 1000);
   const lines = fs.readFileSync(path.join(__dirname, 'input.txt'), 'utf-8').split(os.EOL);
   lines.forEach((line) => {
     let command = 'toggle';
@@ -31,15 +32,20 @@ function exec1() {
     }
     grid[command](range.from, range.to);
   });
-  return grid.litCount();
+  return grid;
+};
+
+function exec1() {
+  return run(makeGrid).litCount();
 }
 
 function exec2() {
-  return 1;
+  return run(makeGridV2).getBrightness();
 }
 
 module.exports = {
   exec1,
   exec2,
   makeGrid,
+  makeGridV2,
 };
