@@ -16,7 +16,7 @@ function exec2() {
   const set = new WireSet();
   const lines = fs.readFileSync(path.join(__dirname, 'input.txt'), 'utf-8').split(os.EOL);
   lines.forEach((line) => set.add(line));
-  set.set['b'] = {
+  set.set.b = {
     hasValue: true,
     value: aSignal,
   };
